@@ -8,6 +8,6 @@ public:
     Reader(){};
     void receiveNewspaper(const QString &name)
     {
-        qDebug() << "Received Newspaper:  " << name;
+        qDebug() << "Received Newspaper:   " << name;
     }
 };
