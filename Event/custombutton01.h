@@ -32,7 +32,7 @@ public:
 protected:
     void mousePressEvent(QMouseEvent *event)
     {
-        qDebug() << "CustomButtonEx";
+        qDebug() << "CustomButtonEx ";
     }
 };
 
