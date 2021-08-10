@@ -251,7 +251,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     switch (ret)
     {
     case QMessageBox::Save:
-        qDebug() << "Save document!";
+        qDebug() << "Save document! ";
         event->accept();
         break;
     case QMessageBox::Discard:
