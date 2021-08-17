@@ -1,0 +1,65 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/LoginWindow/headImage/head_0.png</file>
+        <file>Resources/LoginWindow/headImage/head_1.png</file>
+        <file>Resources/LoginWindow/headImage/head_2.png</file>
+        <file>Resources/LoginWindow/LoginState/state_away.png</file>
+        <file>Resources/LoginWindow/LoginState/state_busy.png</file>
+        <file>Resources/LoginWindow/LoginState/state_hide.png</file>
+        <file>Resources/LoginWindow/LoginState/state_notdisturb.png</file>
+        <file>Resources/LoginWindow/LoginState/state_online.png</file>
+        <file>Resources/LoginWindow/LoginState/state_Qme.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/arrowback.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/back.gif</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/checkbox.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/closeback.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/drop_down_Button.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/flicker.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/HeadImage.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/keyboard.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/minback.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/more_accountlogin.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/state_away.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/state_busy.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/state_hide.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/state_notdisturb.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/state_online.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源/state_Qme.png</file>
+        <file>Resources/LoginWindow/新建文件夹 (2)/arrow.png</file>
+        <file>Resources/LoginWindow/新建文件夹 (2)/arrow_hover.png</file>
+        <file>Resources/LoginWindow/新建文件夹 (2)/arrow_press.png</file>
+        <file>Resources/LoginWindow/新建文件夹 (2)/close.png</file>
+        <file>Resources/LoginWindow/新建文件夹 (2)/close_hover.png</file>
+        <file>Resources/LoginWindow/新建文件夹 (2)/close_press.png</file>
+        <file>Resources/LoginWindow/新建文件夹 (2)/min_.png</file>
+        <file>Resources/LoginWindow/新建文件夹 (2)/min_hover.bmp</file>
+        <file>Resources/LoginWindow/新建文件夹 (2)/min_press.bmp</file>
+        <file>Resources/LoginWindow/arrowback.png</file>
+        <file>Resources/LoginWindow/back.gif</file>
+        <file>Resources/LoginWindow/checkbox.png</file>
+        <file>Resources/LoginWindow/deleteAccount.png</file>
+        <file>Resources/LoginWindow/drop_down_Button.png</file>
+        <file>Resources/LoginWindow/flicker.png</file>
+        <file>Resources/LoginWindow/HeadImage - 副本 (2).png</file>
+        <file>Resources/LoginWindow/HeadImage - 副本.png</file>
+        <file>Resources/LoginWindow/HeadImage.png</file>
+        <file>Resources/LoginWindow/keyboard - 副本.png</file>
+        <file>Resources/LoginWindow/keyboard.png</file>
+        <file>Resources/LoginWindow/keyboard_hover.png</file>
+        <file>Resources/LoginWindow/keyboard_press.png</file>
+        <file>Resources/LoginWindow/LoginWindow.css</file>
+        <file>Resources/LoginWindow/menu_border.png</file>
+        <file>Resources/LoginWindow/more_accountlogin.png</file>
+        <file>Resources/LoginWindow/QQ登录界面图片资源.rar</file>
+        <file>Resources/MyTitle/arrowback.png</file>
+        <file>Resources/MyTitle/close.png</file>
+        <file>Resources/MyTitle/close1.png</file>
+        <file>Resources/MyTitle/close11.png</file>
+        <file>Resources/MyTitle/max.png</file>
+        <file>Resources/MyTitle/min.png</file>
+        <file>Resources/MyTitle/min1.png</file>
+        <file>Resources/MyTitle/restore.png</file>
+        <file>Resources/NetSetWindow/headBack.gif</file>
+        <file>Resources/MyTitle.css</file>
+    </qresource>
+</RCC>
