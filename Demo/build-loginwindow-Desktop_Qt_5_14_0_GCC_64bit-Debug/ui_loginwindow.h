@@ -15,9 +15,11 @@
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -26,8 +28,6 @@ class Ui_LoginWindow
 public:
     QComboBox *accountComboBox;
     QLineEdit *passwordEdit;
-    QCheckBox *rememberPsd;
-    QCheckBox *autoLogin;
     QPushButton *loginButton;
     QPushButton *moreAccountLogin;
     QPushButton *loginState;
@@ -36,6 +36,10 @@ public:
     QLabel *userHead;
     QPushButton *pButtongFlicker;
     QPushButton *pButtonArrow;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QCheckBox *rememberPsd;
+    QCheckBox *autoLogin;
 
     void setupUi(QDialog *LoginWindow)
     {
@@ -69,12 +73,6 @@ public:
         passwordEdit->setMaximumSize(QSize(190, 30));
         passwordEdit->setContextMenuPolicy(Qt::DefaultContextMenu);
         passwordEdit->setEchoMode(QLineEdit::Password);
-        rememberPsd = new QCheckBox(LoginWindow);
-        rememberPsd->setObjectName(QString::fromUtf8("rememberPsd"));
-        rememberPsd->setGeometry(QRect(130, 258, 71, 16));
-        autoLogin = new QCheckBox(LoginWindow);
-        autoLogin->setObjectName(QString::fromUtf8("autoLogin"));
-        autoLogin->setGeometry(QRect(256, 258, 71, 16));
         loginButton = new QPushButton(LoginWindow);
         loginButton->setObjectName(QString::fromUtf8("loginButton"));
         loginButton->setGeometry(QRect(130, 284, 194, 30));
@@ -120,11 +118,33 @@ public:
         pButtonArrow->setSizePolicy(sizePolicy1);
         pButtonArrow->setMinimumSize(QSize(30, 30));
         pButtonArrow->setMaximumSize(QSize(30, 30));
+        widget = new QWidget(LoginWindow);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(130, 250, 190, 31));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setSpacing(18);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setSizeConstraint(QLayout::SetMinimumSize);
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        rememberPsd = new QCheckBox(widget);
+        rememberPsd->setObjectName(QString::fromUtf8("rememberPsd"));
+        rememberPsd->setTabletTracking(false);
+        rememberPsd->setCheckable(true);
+        rememberPsd->setAutoRepeat(false);
+
+        horizontalLayout->addWidget(rememberPsd);
+
+        autoLogin = new QCheckBox(widget);
+        autoLogin->setObjectName(QString::fromUtf8("autoLogin"));
+        sizePolicy1.setHeightForWidth(autoLogin->sizePolicy().hasHeightForWidth());
+        autoLogin->setSizePolicy(sizePolicy1);
+
+        horizontalLayout->addWidget(autoLogin);
+
         userHead->raise();
         loginState->raise();
         accountComboBox->raise();
         passwordEdit->raise();
-        rememberPsd->raise();
         autoLogin->raise();
         loginButton->raise();
         moreAccountLogin->raise();
@@ -144,8 +164,6 @@ public:
 #if QT_CONFIG(accessibility)
         accountComboBox->setAccessibleName(QCoreApplication::translate("LoginWindow", "login_username", nullptr));
 #endif // QT_CONFIG(accessibility)
-        rememberPsd->setText(QCoreApplication::translate("LoginWindow", "\350\256\260\344\275\217\345\257\206\347\240\201", nullptr));
-        autoLogin->setText(QCoreApplication::translate("LoginWindow", "\350\207\252\345\212\250\347\231\273\345\275\225", nullptr));
         loginButton->setText(QCoreApplication::translate("LoginWindow", "\347\231\273  \345\275\225", nullptr));
         moreAccountLogin->setText(QString());
         loginState->setText(QString());
@@ -154,6 +172,8 @@ public:
         userHead->setText(QString());
         pButtongFlicker->setText(QString());
         pButtonArrow->setText(QString());
+        rememberPsd->setText(QCoreApplication::translate("LoginWindow", "\350\256\260\344\275\217\345\257\206\347\240\201", nullptr));
+        autoLogin->setText(QCoreApplication::translate("LoginWindow", "\350\207\252\345\212\250\347\231\273\345\275\225", nullptr));
     } // retranslateUi
 
 };
