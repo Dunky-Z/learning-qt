@@ -16,14 +16,13 @@ protected:
     void initTitleBar();
     void paintEvent(QPaintEvent *event);
     void loadStyleSheet(const QString &sheetName);
-
     void createMyTitle(QWidget* parentWidget);
 
 private slots:
-//    void onButtonMinClicked();
-//    void onButtonRestoreClicked();
-//    void onButtonMaxClicked();
-//    void onButtonCloseClicked();
+    void onButtonMinClicked();
+    void onButtonRestoreClicked();
+    void onButtonMaxClicked();
+    void onButtonCloseClicked();
 
 protected:
     MyTitleBar* m_titleBar;

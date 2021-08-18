@@ -23,32 +23,27 @@ public:
 
     // 设置标题栏背景色;
     void setBackgroundColor(int r, int g, int b , bool isTransparent = false);
-//    // 设置标题栏图标;
-//    void setTitleIcon(QString filePath);
-//    // 设置标题内容;
-//    void setTitleContent(QString titleContent , int titleFontSize = 9);
+    // 设置标题栏图标;
+    void setTitleIcon(QString filePath);
+    // 设置标题内容;
+    void setTitleContent(QString titleContent , int titleFontSize = 9);
     // 设置标题栏长度;
     void setTitleWidth(int width);
     // 设置标题栏上按钮类型;
-    //void setButtonType(ButtonType buttonType);
-//    // 设置标题栏中的标题是否会滚动;具体可以看效果;
-//    void setTitleRoll();
-//    // 设置窗口边框宽度;
-//    void setWindowBorderWidth(int borderWidth);
-
+    void setButtonType(ButtonType buttonType);
     // 保存/获取 最大化前窗口的位置及大小;
-    //void saveRestoreInfo(const QPoint point, const QSize size);
-    //void getRestoreInfo(QPoint& point, QSize& size);
+    void saveRestoreInfo(const QPoint point, const QSize size);
+    void getRestoreInfo(QPoint& point, QSize& size);
 
     // 设置是否通过标题栏移动窗口;
     void setMoveParentWindowFlag(bool isMoveParentWindow);
 
 private:
-//    void paintEvent(QPaintEvent *event);
-//    void mouseDoubleClickEvent(QMouseEvent *event);
-//    void mousePressEvent(QMouseEvent *event);
-//    void mouseMoveEvent(QMouseEvent *event);
-//    void mouseReleaseEvent(QMouseEvent *event);
+    void paintEvent(QPaintEvent *event);
+    void mouseDoubleClickEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
 
     // 初始化控件;
     void initControl();
@@ -66,11 +61,10 @@ signals:
 
 private slots:
     // 按钮触发的槽;
-//    void onButtonMinClicked();
-//    void onButtonRestoreClicked();
-//    void onButtonMaxClicked();
-//    void onButtonCloseClicked();
-//    void onRollTitle();
+    void onButtonMinClicked();
+    void onButtonRestoreClicked();
+    void onButtonMaxClicked();
+    void onButtonCloseClicked();
 
 private:
     QLabel* m_pIcon;					// 标题栏图标;
@@ -91,10 +85,6 @@ private:
     // 移动窗口的变量;
     bool m_isPressed;
     QPoint m_startMovePos;
-    // 标题栏跑马灯效果时钟;
-    QTimer m_titleRollTimer;
-    // 标题栏内容;
-    QString m_titleContent;
     // 按钮类型;
     ButtonType m_buttonType;
     // 窗口边框宽度;

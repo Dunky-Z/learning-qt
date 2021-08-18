@@ -60,6 +60,6 @@
         <file>Resources/MyTitle/min1.png</file>
         <file>Resources/MyTitle/restore.png</file>
         <file>Resources/NetSetWindow/headBack.gif</file>
-        <file>Resources/MyTitle.css</file>
+        <file>Resources/LoginWindow/MyTitle.css</file>
     </qresource>
 </RCC>

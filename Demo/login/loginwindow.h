@@ -2,6 +2,7 @@
 #define LOGIN_H
 
 #include "basewindow.h"
+#include <QListWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class LoginWindow; }
@@ -28,10 +29,22 @@ public:
     LoginWindow(QWidget *parent = 0);
     ~LoginWindow();
 private:
+    // 初始化标题栏;
     void initMyTitle();
+    // 初始化窗口;
     void initWindow();
+    // 初始化用户登录信息;
+    void initAccountList();
 
 private:
     Ui::LoginWindow *ui;
+    // 密码框小键盘按钮;
+    QPushButton* m_keyboardButton;
+    // 登录状态点击菜单;
+    QMenu* m_loginStateMemu;
+    // 登录状态值;
+    LoginState m_loginState;
+    // 下拉列表;
+    QListWidget* m_Accountlist;
 };
 #endif // LOGIN_H
