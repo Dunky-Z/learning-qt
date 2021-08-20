@@ -14,7 +14,7 @@ AccountItem::AccountItem(QWidget *parent)
 
     connect(m_deleteButton, SIGNAL(clicked(bool)), this, SLOT(onRemoveAccount()));
 
-    // 布局;
+    // 下拉框布局;
     QHBoxLayout *mainLayout = new QHBoxLayout(this);
     mainLayout->addWidget(m_Icon);
     mainLayout->addWidget(m_accountNumber);

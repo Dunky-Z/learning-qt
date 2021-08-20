@@ -798,8 +798,10 @@ qrc_img.cpp: ../login/img.qrc \
 		../login/Resources/MyTitle/min.png \
 		../login/Resources/LoginWindow/flicker.png \
 		../login/Resources/LoginWindow/keyboard_press.png \
+		../login/Resources/LoginWindow/close_press.png \
+		../login/Resources/LoginWindow/close.png \
 		../login/Resources/LoginWindow/MyTitle.css \
-		../login/Resources/LoginWindow/QQ登录界面图片资源.rar \
+		../login/Resources/LoginWindow/arrow_hover.png \
 		../login/Resources/LoginWindow/deleteAccount.png \
 		../login/Resources/LoginWindow/more_accountlogin.png \
 		../login/Resources/LoginWindow/HeadImage\ -\ 副本.png \
@@ -809,36 +811,17 @@ qrc_img.cpp: ../login/img.qrc \
 		../login/Resources/LoginWindow/HeadImage\ -\ 副本\ (2).png \
 		../login/Resources/LoginWindow/HeadImage.png \
 		../login/Resources/LoginWindow/LoginWindow.css \
+		../login/Resources/LoginWindow/min_hover.bmp \
 		../login/Resources/LoginWindow/keyboard.png \
+		../login/Resources/LoginWindow/arrow_press.png \
 		../login/Resources/LoginWindow/keyboard\ -\ 副本.png \
+		../login/Resources/LoginWindow/min_.png \
 		../login/Resources/LoginWindow/keyboard_hover.png \
 		../login/Resources/LoginWindow/checkbox.png \
+		../login/Resources/LoginWindow/close_hover.png \
+		../login/Resources/LoginWindow/arrow.png \
+		../login/Resources/LoginWindow/min_press.bmp \
 		../login/Resources/LoginWindow/back.gif \
-		../login/Resources/LoginWindow/新建文件夹\ (2)/close.png \
-		../login/Resources/LoginWindow/新建文件夹\ (2)/close_press.png \
-		../login/Resources/LoginWindow/新建文件夹\ (2)/min_hover.bmp \
-		../login/Resources/LoginWindow/新建文件夹\ (2)/close_hover.png \
-		../login/Resources/LoginWindow/新建文件夹\ (2)/arrow_press.png \
-		../login/Resources/LoginWindow/新建文件夹\ (2)/arrow_hover.png \
-		../login/Resources/LoginWindow/新建文件夹\ (2)/min_press.bmp \
-		../login/Resources/LoginWindow/新建文件夹\ (2)/arrow.png \
-		../login/Resources/LoginWindow/新建文件夹\ (2)/min_.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/HeadImage.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/state_hide.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/state_online.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/drop_down_Button.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/state_Qme.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/state_notdisturb.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/arrowback.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/checkbox.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/keyboard.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/state_busy.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/flicker.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/minback.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/more_accountlogin.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/state_away.png \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/back.gif \
-		../login/Resources/LoginWindow/QQ登录界面图片资源/closeback.png \
 		../login/Resources/LoginWindow/LoginState/state_hide.png \
 		../login/Resources/LoginWindow/LoginState/state_online.png \
 		../login/Resources/LoginWindow/LoginState/state_Qme.png \
@@ -1882,6 +1865,7 @@ basewindow.o: ../login/basewindow.cpp ../login/basewindow.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtextoption.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpen.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/QFile \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/QDebug \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QStyleOption \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qstyleoption.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qabstractspinbox.h \
@@ -2283,30 +2267,15 @@ loginwindow.o: ../login/loginwindow.cpp ../login/loginwindow.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qrubberband.h \
 		ui_loginwindow.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/QLocale \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/QVariant \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QApplication \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qapplication.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qcoreapplication.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qeventloop.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qguiapplication.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qinputmethod.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QCheckBox \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qcheckbox.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QComboBox \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qcombobox.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QLineEdit \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qlineedit.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtextcursor.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtextformat.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpen.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtextoption.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/QPainter \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpainter.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtextoption.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpen.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/QMovie \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qmovie.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qimagereader.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qcoreapplication.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qeventloop.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qimageiohandler.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qplugin.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qpointer.h \
