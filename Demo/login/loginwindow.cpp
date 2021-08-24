@@ -90,7 +90,6 @@ void LoginWindow::initMyTitle()
 // 初始化用户登录信息;
 void LoginWindow::initAccountList()
 {
-    // 设置代理;
     m_Accountlist = new QListWidget(this);
     ui->accountComboBox->setModel(m_Accountlist->model());
     ui->accountComboBox->setView(m_Accountlist);

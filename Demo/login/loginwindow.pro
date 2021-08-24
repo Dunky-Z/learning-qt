@@ -16,23 +16,31 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    WindowRotation.cpp \
     accountitem.cpp \
     basewindow.cpp \
     labeled_edit/bottomlineedit.cpp \
     labeled_edit/labelededit.cpp \
+    loginnetsetwindow.cpp \
     loginwindow.cpp \
     main.cpp \
-    mytitlebar.cpp
+    mytitlebar.cpp \
+    rotatewidget.cpp
 
 HEADERS += \
+    WindowRotation.h \
     accountitem.h \
     basewindow.h \
     labeled_edit/bottomlineedit.h \
     labeled_edit/labelededit.h \
+    loginnetsetwindow.h \
     loginwindow.h \
-    mytitlebar.h
+    mytitlebar.h \
+    rotatewidget.h
 
 FORMS += \
+    WindowRotation.ui \
+    loginnetsetwindow.ui \
     loginwindow.ui
 
 # Default rules for deployment.
@@ -43,4 +51,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 
 RESOURCES += \
+    Resource.qrc \
     img.qrc

@@ -1,11 +1,11 @@
-#include "loginwindow.h"
 
-#include <QApplication>
+#include <QtWidgets/QApplication>
+#include "rotatewidget.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    LoginWindow w;
+    RotateWidget w;
     w.show();
     return a.exec();
 }
