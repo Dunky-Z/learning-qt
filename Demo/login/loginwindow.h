@@ -44,6 +44,12 @@ private slots:
     void onShowAccountInfo(int index, QString accountName);
     // 移除当前登录列表中某一项;
     void onRemoveAccount(int index);
+    // 网络设置按钮点击;
+    void onNetWorkSet();
+signals:
+    void rotateWindow();
+    void closeWindow();
+    void hideWindow();
 
 private:
     Ui::LoginWindow *ui;

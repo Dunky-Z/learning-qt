@@ -62,7 +62,7 @@ void BaseWindow::paintEvent(QPaintEvent* event)
 // 	shadow->setOffset(5, 5);
 // 	this->setGraphicsEffect(shadow);
 
-
+    qDebug() << "BaseWindow::paintEvent" ;
     Q_UNUSED(event);
     QStyleOption opt;
     opt.init(this);
@@ -76,8 +76,6 @@ void BaseWindow::paintEvent(QPaintEvent* event)
     pathBack.addRoundedRect(QRect(0, 0, this->width(), this->height()), 3, 3);
     painter.setRenderHint(QPainter::Antialiasing, true);
     painter.fillPath(pathBack, QBrush(QColor(236, 241, 245)));
-
-
     return QWidget::paintEvent(event);
 }
 

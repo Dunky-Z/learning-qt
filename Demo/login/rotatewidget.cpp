@@ -1,51 +1,51 @@
-#include "rotatewidget.h"
+ï»¿#include "rotatewidget.h"
 #include <QPropertyAnimation>
 #include "loginwindow.h"
 #include "loginnetsetwindow.h"
 #include <QPainter>
+#include <QDebug>
 
 RotateWidget::RotateWidget(QWidget *parent)
-	: QStackedWidget(parent)
-	, m_isRoratingWindow(false)
-	, m_nextPageIndex(0)
+    : QStackedWidget(parent), m_isRoratingWindow(false), m_nextPageIndex(0)
 {
-	this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::WindowMinimizeButtonHint);
-	this->setAttribute(Qt::WA_TranslucentBackground);
-	// ¸ø´°¿ÚÉèÖÃrotateValueÊôĞÔ;
-	this->setProperty("rotateValue", 0);
-	initRotateWindow();
+    this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::WindowMinimizeButtonHint);
+    this->setAttribute(Qt::WA_TranslucentBackground);
+    // ç»™çª—å£è®¾ç½®rotateValueå±æ€§;
+    this->setProperty("rotateValue", 0);
+    initRotateWindow();
 }
 
 RotateWidget::~RotateWidget()
 {
-
 }
 
-// ³õÊ¼»¯Ğı×ªµÄ´°¿Ú;
+// åˆå§‹åŒ–æ—‹è½¬çš„çª—å£;
 void RotateWidget::initRotateWindow()
 {
-	m_loginWindow = new LoginWindow(this);
-	// ÕâÀï¶¨ÒåÁËÁ½¸öĞÅºÅ£¬ĞèÒª×Ô¼ºÈ¥·¢ËÍĞÅºÅ;
+    qDebug() << "åˆå§‹åŒ–æ—‹è½¬çª—å£";
+    m_loginWindow = new LoginWindow(this);
+    // è¿™é‡Œå®šä¹‰äº†ä¸¤ä¸ªä¿¡å·ï¼Œéœ€è¦è‡ªå·±å»å‘é€ä¿¡å·;
     connect(m_loginWindow, SIGNAL(rotateWindow()), this, SLOT(onRotateWindow()));
-    connect(m_loginWindow, SIGNAL(closeWindow()), this, SLOT(close()));
-    connect(m_loginWindow, SIGNAL(hideWindow()), this, SLOT(onHideWindow()));
+    //    connect(m_loginWindow, SIGNAL(closeWindow()), this, SLOT(close()));
+    //    connect(m_loginWindow, SIGNAL(hideWindow()), this, SLOT(onHideWindow()));
 
-	m_loginNetSetWindow = new LoginNetSetWindow(this);
-//	connect(m_loginNetSetWindow, SIGNAL(rotateWindow()), this, SLOT(onRotateWindow()));
-//	connect(m_loginNetSetWindow, SIGNAL(closeWindow()), this, SLOT(close()));
-//	connect(m_loginNetSetWindow, SIGNAL(hideWindow()), this, SLOT(onHideWindow()));
+    m_loginNetSetWindow = new LoginNetSetWindow(this);
+    //	connect(m_loginNetSetWindow, SIGNAL(rotateWindow()), this, SLOT(onRotateWindow()));
+    //	connect(m_loginNetSetWindow, SIGNAL(closeWindow()), this, SLOT(close()));
+    //	connect(m_loginNetSetWindow, SIGNAL(hideWindow()), this, SLOT(onHideWindow()));
 
-	this->addWidget(m_loginWindow);
-	this->addWidget(m_loginNetSetWindow);
+    this->addWidget(m_loginWindow);
+    this->addWidget(m_loginNetSetWindow);
 
-	// ÕâÀï¿íºÍ¸ß¶¼Ôö¼Ó£¬ÊÇÒòÎªÔÚĞı×ª¹ı³ÌÖĞ´°¿Ú¿íºÍ¸ß¶¼»á±ä»¯;
-	this->setFixedSize(QSize(m_loginWindow->width() + 20, m_loginWindow->height() + 100));
+    // è¿™é‡Œå®½å’Œé«˜éƒ½å¢åŠ ï¼Œæ˜¯å› ä¸ºåœ¨æ—‹è½¬è¿‡ç¨‹ä¸­çª—å£å®½å’Œé«˜éƒ½ä¼šå˜åŒ–;
+    this->setFixedSize(QSize(m_loginWindow->width() + 20, m_loginWindow->height() + 100));
 }
 
-// ¿ªÊ¼Ğı×ª´°¿Ú;
+// å¼€å§‹æ—‹è½¬çª—å£;
 void RotateWidget::onRotateWindow()
 {
-    // Èç¹û´°¿ÚÕıÔÚĞı×ª£¬Ö±½Ó·µ»Ø;
+    qDebug() << "å¼€å§‹æ—‹è½¬";
+    // å¦‚æœçª—å£æ­£åœ¨æ—‹è½¬ï¼Œç›´æ¥è¿”å›;
     if (m_isRoratingWindow)
     {
         return;
@@ -53,34 +53,37 @@ void RotateWidget::onRotateWindow()
     m_isRoratingWindow = true;
     m_nextPageIndex = (currentIndex() + 1) >= count() ? 0 : (currentIndex() + 1);
     QPropertyAnimation *rotateAnimation = new QPropertyAnimation(this, "rotateValue");
-    // ÉèÖÃĞı×ª³ÖĞøÊ±¼ä;
-    rotateAnimation->setDuration(1500);
-    // ÉèÖÃĞı×ª½Ç¶È±ä»¯Ç÷ÊÆ;
+    // è®¾ç½®æ—‹è½¬æŒç»­æ—¶é—´;
+    rotateAnimation->setDuration(1000);
+    qDebug() << "è®¾ç½®é€‰æ‹©æŒç»­ä¸–ç•Œ";
+    // è®¾ç½®æ—‹è½¬è§’åº¦å˜åŒ–è¶‹åŠ¿;
     rotateAnimation->setEasingCurve(QEasingCurve::InCubic);
-    // ÉèÖÃĞı×ª½Ç¶È·¶Î§;
+    // è®¾ç½®æ—‹è½¬è§’åº¦èŒƒå›´;
     rotateAnimation->setStartValue(0);
     rotateAnimation->setEndValue(180);
     connect(rotateAnimation, SIGNAL(valueChanged(QVariant)), this, SLOT(repaint()));
     connect(rotateAnimation, SIGNAL(finished()), this, SLOT(onRotateFinished()));
-    // Òş²Øµ±Ç°´°¿Ú£¬Í¨¹ı²»Í¬½Ç¶ÈµÄ»æÖÆÀ´´ïµ½Ğı×ªµÄĞ§¹û;
+    // éšè—å½“å‰çª—å£ï¼Œé€šè¿‡ä¸åŒè§’åº¦çš„ç»˜åˆ¶æ¥è¾¾åˆ°æ—‹è½¬çš„æ•ˆæœ;
     currentWidget()->hide();
     rotateAnimation->start();
 }
 
-// Ğı×ª½áÊø;
+// æ—‹è½¬ç»“æŸ;
 void RotateWidget::onRotateFinished()
 {
+        qDebug() << "ç»“æŸæ—‹è½¬";
     m_isRoratingWindow = false;
     setCurrentWidget(widget(m_nextPageIndex));
     repaint();
+
 }
 
-// »æÖÆĞı×ªĞ§¹û;
-void RotateWidget::paintEvent(QPaintEvent* event)
+// ç»˜åˆ¶æ—‹è½¬æ•ˆæœ;
+void RotateWidget::paintEvent(QPaintEvent *event)
 {
     if (m_isRoratingWindow)
     {
-        // Ğ¡ÓÚ90¶ÈÊ±;
+        // å°äº90åº¦æ—¶;
         int rotateValue = this->property("rotateValue").toInt();
         if (rotateValue <= 90)
         {
@@ -94,7 +97,7 @@ void RotateWidget::paintEvent(QPaintEvent* event)
             painter.setTransform(transform);
             painter.drawPixmap(-1 * width() / 2, 0, rotatePixmap);
         }
-        // ´óÓÚ90¶ÈÊ±
+        // å¤§äº90åº¦æ—¶
         else
         {
             QPixmap rotatePixmap(widget(m_nextPageIndex)->size());
@@ -110,7 +113,7 @@ void RotateWidget::paintEvent(QPaintEvent* event)
     }
     else
     {
-        return RotateWidget::paintEvent(event);
+        return QStackedWidget::paintEvent(event);
     }
 }
 

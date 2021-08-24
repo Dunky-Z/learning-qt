@@ -1,4 +1,4 @@
-#ifndef ROTATEWIDGET_H
+ï»¿#ifndef ROTATEWIDGET_H
 #define ROTATEWIDGET_H
 
 #include <QStackedWidget>
@@ -14,24 +14,24 @@ public:
 	~RotateWidget();
 
 private:
-	// ³õÊ¼»¯Ğı×ªµÄ´°¿Ú;
+	// åˆå§‹åŒ–æ—‹è½¬çš„çª—å£;
 	void initRotateWindow();
-	// »æÖÆĞı×ªĞ§¹û;
-    void paintEvent(QPaintEvent* event);
+	// ç»˜åˆ¶æ—‹è½¬æ•ˆæœ;
+	void paintEvent(QPaintEvent *event);
 
 private slots:
-    // ¿ªÊ¼Ğı×ª´°¿Ú;
-    void onRotateWindow();
-    // ´°¿ÚĞı×ª½áÊø;
-    void onRotateFinished();
-//	// ×îĞ¡»¯´°¿Ú;
-//	void onHideWindow();
+	// å¼€å§‹æ—‹è½¬çª—å£;
+	void onRotateWindow();
+	// çª—å£æ—‹è½¬ç»“æŸ;
+	void onRotateFinished();
+	//	// æœ€å°åŒ–çª—å£;
+	//	void onHideWindow();
 
 private:
-	// µ±Ç°´°¿ÚÊÇ·ñÕıÔÚĞı×ª;
+	// å½“å‰çª—å£æ˜¯å¦æ­£åœ¨æ—‹è½¬;
 	bool m_isRoratingWindow;
-	LoginWindow* m_loginWindow;
-	LoginNetSetWindow* m_loginNetSetWindow;
+	LoginWindow *m_loginWindow;
+	LoginNetSetWindow *m_loginNetSetWindow;
 	int m_nextPageIndex;
 };
 

@@ -69,7 +69,7 @@ void LoginWindow::initWindow()
 
 
     connect(ui->loginState, SIGNAL(clicked()), this, SLOT(onLoginStateClicked()));
-//    connect(ui->pButtonArrow, SIGNAL(clicked()), this, SLOT(onNetWorkSet()));
+    connect(ui->pButtonArrow, SIGNAL(clicked()), this, SLOT(onNetWorkSet()));
 
 }
 
@@ -165,4 +165,8 @@ void LoginWindow::onMenuClicked(QAction * action)
     // 获取状态值;
     m_loginState = (LoginState)action->data().toInt();
     qDebug() << "onMenuClicked" << m_loginState;
+}
+void LoginWindow::onNetWorkSet()
+{
+    emit rotateWindow();
 }

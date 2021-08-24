@@ -25,8 +25,7 @@ private:
 	void mousePressEvent(QMouseEvent *event);
 	void mouseMoveEvent(QMouseEvent *event);
 	void mouseReleaseEvent(QMouseEvent *event);
-	void closeEvent(QCloseEvent *event);
-	
+	//	void closeEvent(QCloseEvent *event);
 
 private:
 	Ui::LoginNetSetWindow ui;

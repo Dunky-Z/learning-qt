@@ -2,6 +2,7 @@
 #include <QPainter>
 #include <QMovie>
 #include <QMouseEvent>
+#include <QDebug>
 
 LoginNetSetWindow::LoginNetSetWindow(QWidget *parent)
 	: BaseWindow(parent)
@@ -14,58 +15,57 @@ LoginNetSetWindow::LoginNetSetWindow(QWidget *parent)
 
 LoginNetSetWindow::~LoginNetSetWindow()
 {
-
 }
 
 void LoginNetSetWindow::initMyTitle()
 {
+	qDebug() << "åˆå§‹åŒ–ç½‘ç»œè®¾ç½®æ ‡é¢˜";
 	m_titleBar->move(0, 0);
 	m_titleBar->raise();
 	m_titleBar->setBackgroundColor(0, 0, 0, true);
 	m_titleBar->setButtonType(MIN_BUTTON);
 	m_titleBar->setTitleWidth(this->width());
-	// ÕâÀïÐèÒªÉèÖÃ³Éfalse£¬²»ÔÊÐíÍ¨¹ý±êÌâÀ¸ÍÏ¶¯À´ÒÆ¶¯´°¿ÚÎ»ÖÃ,·ñÔò»áÔì³É´°¿ÚÎ»ÖÃ´íÎó;
+	// è¿™é‡Œéœ€è¦è®¾ç½®æˆfalseï¼Œä¸å…è®¸é€šè¿‡æ ‡é¢˜æ æ‹–åŠ¨æ¥ç§»åŠ¨çª—å£ä½ç½®,å¦åˆ™ä¼šé€ æˆçª—å£ä½ç½®é”™è¯¯;
 	m_titleBar->setMoveParentWindowFlag(false);
 }
 
 void LoginNetSetWindow::initWindow()
 {
-	//±³¾°GIGÍ¼;
-	QLabel* pBack = new QLabel(this);
+	QLabel *pBack = new QLabel(this);
 	QMovie *movie = new QMovie();
 	movie->setFileName(":/Resources/NetSetWindow/headBack.gif");
 	pBack->setMovie(movie);
 	movie->start();
 	pBack->move(0, 0);
 
-	connect(ui.pButtonOk, SIGNAL(clicked()), this, SIGNAL(rotateWindow()));
-	connect(ui.pButtonCancel, SIGNAL(clicked()), this, SIGNAL(rotateWindow()));
-	
-    ui.comboBoxNetType->addItem(QStringLiteral("bushiyong"));
-    ui.comboBoxServerType->addItem(QStringLiteral("bushiyongxuanx"));
+	//	connect(ui.pButtonOk, SIGNAL(clicked()), this, SIGNAL(rotateWindow()));
+	//	connect(ui.pButtonCancel, SIGNAL(clicked()), this, SIGNAL(rotateWindow()));
+
+    ui.comboBoxNetType->addItem(QStringLiteral("ä¸ä½¿ç”¨ä»£ç†"));
+    ui.comboBoxServerType->addItem(QStringLiteral("ä¸ä½¿ç”¨é«˜çº§é€‰é¡¹"));
 }
 
 void LoginNetSetWindow::paintEvent(QPaintEvent *event)
 {
-	// »æÖÆ±³¾°Í¼;
+	// ç»˜åˆ¶èƒŒæ™¯å›¾;
 	QPainter painter(this);
 	QPainterPath pathBack;
 	pathBack.setFillRule(Qt::WindingFill);
 	pathBack.addRoundedRect(QRect(0, 0, this->width(), this->height()), 3, 3);
 	painter.setRenderHint(QPainter::Antialiasing, true);
 	painter.fillPath(pathBack, QBrush(QColor(235, 242, 249)));
-	
+
 	QPainterPath pathBottom;
 	pathBottom.setFillRule(Qt::WindingFill);
 	pathBottom.addRoundedRect(QRect(0, 300, this->width(), this->height() - 300), 3, 3);
 	painter.setRenderHint(QPainter::Antialiasing, true);
 	painter.fillPath(pathBottom, QBrush(QColor(205, 226, 242)));
 
-	painter.setPen(QPen(QColor(160 , 175 , 189)));
+	painter.setPen(QPen(QColor(160, 175, 189)));
 	painter.drawRoundedRect(QRect(0, 0, this->width(), this->height()), 3, 3);
 }
 
-// ÒÔÏÂÍ¨¹ýmousePressEvent¡¢mouseMoveEvent¡¢mouseReleaseEventÈý¸öÊÂ¼þÊµÏÖÁËÊó±êÍÏ¶¯±êÌâÀ¸ÒÆ¶¯´°¿ÚµÄÐ§¹û;
+// ä»¥ä¸‹é€šè¿‡mousePressEventã€mouseMoveEventã€mouseReleaseEventä¸‰ä¸ªäº‹ä»¶å®žçŽ°äº†é¼ æ ‡æ‹–åŠ¨æ ‡é¢˜æ ç§»åŠ¨çª—å£çš„æ•ˆæžœ;
 void LoginNetSetWindow::mousePressEvent(QMouseEvent *event)
 {
 	if (event->button() == Qt::LeftButton)
@@ -95,8 +95,8 @@ void LoginNetSetWindow::mouseReleaseEvent(QMouseEvent *event)
 	return QWidget::mouseReleaseEvent(event);
 }
 
-void LoginNetSetWindow::closeEvent(QCloseEvent *event)
-{
-	emit closeWindow();
-    return LoginNetSetWindow::closeEvent(event);
-}
+//void LoginNetSetWindow::closeEvent(QCloseEvent *event)
+//{
+//	emit closeWindow();
+//    return LoginNetSetWindow::closeEvent(event);
+//}
