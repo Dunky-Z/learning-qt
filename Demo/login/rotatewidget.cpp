@@ -26,17 +26,17 @@ void RotateWidget::initRotateWindow()
     m_loginWindow = new LoginWindow(this);
     // 这里定义了两个信号，需要自己去发送信号;
     connect(m_loginWindow, SIGNAL(rotateWindow()), this, SLOT(onRotateWindow()));
-    //    connect(m_loginWindow, SIGNAL(closeWindow()), this, SLOT(close()));
-    //    connect(m_loginWindow, SIGNAL(hideWindow()), this, SLOT(onHideWindow()));
+    connect(m_loginWindow, SIGNAL(closeWindow()), this, SLOT(closeRotate()));
+    connect(m_loginWindow, SIGNAL(hideWindow()), this, SLOT(onHideWindow()));
 
     m_loginNetSetWindow = new LoginNetSetWindow(this);
-    //	connect(m_loginNetSetWindow, SIGNAL(rotateWindow()), this, SLOT(onRotateWindow()));
-    //	connect(m_loginNetSetWindow, SIGNAL(closeWindow()), this, SLOT(close()));
-    //	connect(m_loginNetSetWindow, SIGNAL(hideWindow()), this, SLOT(onHideWindow()));
+    connect(m_loginNetSetWindow, SIGNAL(rotateWindow()), this, SLOT(onRotateWindow()));
+    connect(m_loginNetSetWindow, SIGNAL(closeWindow()), this, SLOT(closeRotate()));
+    connect(m_loginNetSetWindow, SIGNAL(hideWindow()), this, SLOT(onHideWindow()));
 
     this->addWidget(m_loginWindow);
     this->addWidget(m_loginNetSetWindow);
-
+    this->move(500,500);
     // 这里宽和高都增加，是因为在旋转过程中窗口宽和高都会变化;
     this->setFixedSize(QSize(m_loginWindow->width() + 20, m_loginWindow->height() + 100));
 }
@@ -117,7 +117,14 @@ void RotateWidget::paintEvent(QPaintEvent *event)
     }
 }
 
-//void RotateWidget::onHideWindow()
-//{
-//	showMinimized();
-//}
+void RotateWidget::onHideWindow()
+{
+    showMinimized();
+}
+
+
+void RotateWidget::closeRotate()
+{
+    qDebug() << "closeRotate" ;
+    qApp->quit();
+}

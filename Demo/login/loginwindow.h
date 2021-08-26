@@ -3,6 +3,10 @@
 
 #include "basewindow.h"
 #include <QListWidget>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QGraphicsWidget>
+#include <QGraphicsProxyWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class LoginWindow; }
@@ -35,6 +39,12 @@ private:
     void initWindow();
     // 初始化用户登录信息;
     void initAccountList();
+
+    void mousePressEvent(QMouseEvent *event);
+    void mouseMoveEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+    void closeEvent(QCloseEvent *event);
+
 private slots:
     // 选择了新的用户登录状态;
     void onLoginStateClicked();
@@ -46,6 +56,7 @@ private slots:
     void onRemoveAccount(int index);
     // 网络设置按钮点击;
     void onNetWorkSet();
+
 signals:
     void rotateWindow();
     void closeWindow();
@@ -61,5 +72,13 @@ private:
     LoginState m_loginState;
     // 下拉列表;
     QListWidget* m_Accountlist;
+
+    // 翻转;
+    QGraphicsScene m_scene;
+    QGraphicsWidget *m_graphicsWidget;
+    QGraphicsView m_view;
+
+    bool m_isPressed;
+    QPoint m_startMovePos;
 };
 #endif // LOGIN_H

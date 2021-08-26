@@ -25,7 +25,7 @@ private slots:
 	// 窗口旋转结束;
 	void onRotateFinished();
 	//	// 最小化窗口;
-	//	void onHideWindow();
+        void onHideWindow();
 
 private:
 	// 当前窗口是否正在旋转;
@@ -33,6 +33,10 @@ private:
 	LoginWindow *m_loginWindow;
 	LoginNetSetWindow *m_loginNetSetWindow;
 	int m_nextPageIndex;
+
+private slots:
+    void closeRotate();
+
 };
 
 #endif // ROTATEWIDGET_H

@@ -10,6 +10,7 @@ LoginNetSetWindow::LoginNetSetWindow(QWidget *parent)
 	ui.setupUi(this);
 	initWindow();
 	initMyTitle();
+    this->loadStyleSheet(":/Resources/LoginWindow/LoginWindow.css");
 	connect(m_titleBar, SIGNAL(signalButtonMinClicked()), this, SIGNAL(hideWindow()));
 }
 
@@ -38,8 +39,8 @@ void LoginNetSetWindow::initWindow()
 	movie->start();
 	pBack->move(0, 0);
 
-	//	connect(ui.pButtonOk, SIGNAL(clicked()), this, SIGNAL(rotateWindow()));
-	//	connect(ui.pButtonCancel, SIGNAL(clicked()), this, SIGNAL(rotateWindow()));
+    connect(ui.pButtonOk, SIGNAL(clicked()), this, SIGNAL(rotateWindow()));
+    connect(ui.pButtonCancel, SIGNAL(clicked()), this, SIGNAL(rotateWindow()));
 
     ui.comboBoxNetType->addItem(QStringLiteral("不使用代理"));
     ui.comboBoxServerType->addItem(QStringLiteral("不使用高级选项"));
@@ -95,8 +96,8 @@ void LoginNetSetWindow::mouseReleaseEvent(QMouseEvent *event)
 	return QWidget::mouseReleaseEvent(event);
 }
 
-//void LoginNetSetWindow::closeEvent(QCloseEvent *event)
-//{
-//	emit closeWindow();
-//    return LoginNetSetWindow::closeEvent(event);
-//}
+void LoginNetSetWindow::closeEvent(QCloseEvent *event)
+{
+    emit closeWindow();
+    return QWidget::closeEvent(event);
+}

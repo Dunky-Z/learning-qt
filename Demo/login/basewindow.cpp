@@ -62,7 +62,7 @@ void BaseWindow::paintEvent(QPaintEvent* event)
 // 	shadow->setOffset(5, 5);
 // 	this->setGraphicsEffect(shadow);
 
-    qDebug() << "BaseWindow::paintEvent" ;
+//    qDebug() << "BaseWindow::paintEvent" ;
     Q_UNUSED(event);
     QStyleOption opt;
     opt.init(this);

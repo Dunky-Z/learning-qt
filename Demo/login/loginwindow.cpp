@@ -14,12 +14,18 @@ LoginWindow::LoginWindow(QWidget *parent)
     : BaseWindow(parent)
     , ui(new Ui::LoginWindow)
     , m_loginState(ONLINE)
+    , m_graphicsWidget(NULL)
+    , m_view(&m_scene)
+    , m_isPressed(false)
+
 {
     ui->setupUi(this);
     initWindow();
     initMyTitle();
     initAccountList();
     this->loadStyleSheet(":/Resources/LoginWindow/LoginWindow.css");
+    connect(m_titleBar, SIGNAL(signalButtonMinClicked()), this, SIGNAL(hideWindow()));
+
 }
 
 LoginWindow::~LoginWindow()
@@ -29,7 +35,7 @@ LoginWindow::~LoginWindow()
 // 初始化窗口;
 void LoginWindow::initWindow()
 {
-    //背景GIG图;
+    //背景图;
     QLabel* pBack = new QLabel(this);
     QMovie *movie = new QMovie();
     movie->setFileName(":/Resources/LoginWindow/back.gif");
@@ -169,4 +175,41 @@ void LoginWindow::onMenuClicked(QAction * action)
 void LoginWindow::onNetWorkSet()
 {
     emit rotateWindow();
+}
+
+
+// 以下通过mousePressEvent、mouseMoveEvent、mouseReleaseEvent三个事件实现了鼠标拖动标题栏移动窗口的效果;
+void LoginWindow::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton)
+    {
+        m_isPressed = true;
+        m_startMovePos = event->globalPos();
+    }
+
+    return QWidget::mousePressEvent(event);
+}
+
+void LoginWindow::mouseMoveEvent(QMouseEvent *event)
+{
+    if (m_isPressed)
+    {
+        QPoint movePoint = event->globalPos() - m_startMovePos;
+        QPoint widgetPos = this->parentWidget()->pos() + movePoint;
+        m_startMovePos = event->globalPos();
+        this->parentWidget()->move(widgetPos.x(), widgetPos.y());
+    }
+    return QWidget::mouseMoveEvent(event);
+}
+
+void LoginWindow::mouseReleaseEvent(QMouseEvent *event)
+{
+    m_isPressed = false;
+    return QWidget::mouseReleaseEvent(event);
+}
+
+void LoginWindow::closeEvent(QCloseEvent *event)
+{
+    emit closeWindow();
+    return QWidget::closeEvent(event);
 }
