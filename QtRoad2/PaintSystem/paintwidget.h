@@ -3,6 +3,7 @@
 #include <QPaintEvent>
 #include <QApplication>
 #include <QMainWindow>
+#include <QLinearGradient>
 
 class PaintedWidget : public QWidget
 {
