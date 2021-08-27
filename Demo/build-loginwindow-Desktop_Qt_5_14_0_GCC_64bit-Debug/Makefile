@@ -1729,6 +1729,20 @@ moc_loginwindow.cpp: ../login/loginwindow.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qtabbar.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qrubberband.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QGraphicsScene \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpen.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QGraphicsView \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicsview.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpainter.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtextoption.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qscrollarea.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QGraphicsWidget \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicswidget.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicslayoutitem.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QGraphicsProxyWidget \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicsproxywidget.h \
 		moc_predefs.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/bin/moc
 	/opt/Qt5.14.0/5.14.0/gcc_64/bin/moc $(DEFINES) --include /home/dominic/learning-qt/Demo/build-loginwindow-Desktop_Qt_5_14_0_GCC_64bit-Debug/moc_predefs.h -I/opt/Qt5.14.0/5.14.0/gcc_64/mkspecs/linux-g++ -I/home/dominic/learning-qt/Demo/login -I/opt/Qt5.14.0/5.14.0/gcc_64/include -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui -I/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../login/loginwindow.h -o moc_loginwindow.cpp
@@ -2751,7 +2765,8 @@ loginnetsetwindow.o: ../login/loginnetsetwindow.cpp ../login/loginnetsetwindow.h
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qjsonobject.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qjsonvalue.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/qfactoryinterface.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/QMouseEvent
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/QMouseEvent \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o loginnetsetwindow.o ../login/loginnetsetwindow.cpp
 
 loginwindow.o: ../login/loginwindow.cpp ../login/loginwindow.h \
@@ -2891,11 +2906,22 @@ loginwindow.o: ../login/loginwindow.cpp ../login/loginwindow.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qtabbar.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qrubberband.h \
-		ui_loginwindow.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/QPainter \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QGraphicsScene \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpen.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QGraphicsView \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicsview.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpainter.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtextoption.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpen.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qscrollarea.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QGraphicsWidget \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicswidget.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicslayoutitem.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QGraphicsProxyWidget \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicsproxywidget.h \
+		ui_loginwindow.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/QPainter \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/QMovie \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qmovie.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qimagereader.h \
@@ -3321,12 +3347,24 @@ rotatewidget.o: ../login/rotatewidget.cpp ../login/rotatewidget.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qtabbar.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qtabwidget.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qrubberband.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QGraphicsScene \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpen.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QGraphicsView \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicsview.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpainter.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtextoption.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qscrollarea.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QGraphicsWidget \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicswidget.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicslayoutitem.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/QGraphicsProxyWidget \
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtWidgets/qgraphicsproxywidget.h \
 		../login/loginnetsetwindow.h \
 		ui_loginnetsetwindow.h \
 		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/QPainter \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpainter.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qtextoption.h \
-		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtGui/qpen.h
+		/opt/Qt5.14.0/5.14.0/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o rotatewidget.o ../login/rotatewidget.cpp
 
 qrc_Resource.o: qrc_Resource.cpp 

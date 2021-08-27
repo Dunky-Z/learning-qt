@@ -20,7 +20,7 @@ LoginNetSetWindow::~LoginNetSetWindow()
 
 void LoginNetSetWindow::initMyTitle()
 {
-	qDebug() << "初始化网络设置标题";
+//	qDebug() << "初始化网络设置标题";
 	m_titleBar->move(0, 0);
 	m_titleBar->raise();
 	m_titleBar->setBackgroundColor(0, 0, 0, true);

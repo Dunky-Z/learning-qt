@@ -6,7 +6,9 @@
 #include <QDebug>
 
 RotateWidget::RotateWidget(QWidget *parent)
-    : QStackedWidget(parent), m_isRoratingWindow(false), m_nextPageIndex(0)
+    : QStackedWidget(parent)
+    , m_isRoratingWindow(false)
+    , m_nextPageIndex(0)
 {
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::WindowMinimizeButtonHint);
     this->setAttribute(Qt::WA_TranslucentBackground);
@@ -22,7 +24,7 @@ RotateWidget::~RotateWidget()
 // 初始化旋转的窗口;
 void RotateWidget::initRotateWindow()
 {
-    qDebug() << "初始化旋转窗口";
+//    qDebug() << "初始化旋转窗口";
     m_loginWindow = new LoginWindow(this);
     // 这里定义了两个信号，需要自己去发送信号;
     connect(m_loginWindow, SIGNAL(rotateWindow()), this, SLOT(onRotateWindow()));
@@ -36,14 +38,16 @@ void RotateWidget::initRotateWindow()
 
     this->addWidget(m_loginWindow);
     this->addWidget(m_loginNetSetWindow);
-    this->move(500,500);
+    this->move(0,0);
     // 这里宽和高都增加，是因为在旋转过程中窗口宽和高都会变化;
-    this->setFixedSize(QSize(m_loginWindow->width() + 20, m_loginWindow->height() + 100));
+    this->setFixedSize(QSize(m_loginWindow->width() + 0, m_loginWindow->height() + 0));
 }
 
 // 开始旋转窗口;
 void RotateWidget::onRotateWindow()
 {
+    this->setFixedSize(QSize(m_loginWindow->width() + 110, m_loginWindow->height() + 150));
+
     qDebug() << "开始旋转";
     // 如果窗口正在旋转，直接返回;
     if (m_isRoratingWindow)
@@ -54,8 +58,8 @@ void RotateWidget::onRotateWindow()
     m_nextPageIndex = (currentIndex() + 1) >= count() ? 0 : (currentIndex() + 1);
     QPropertyAnimation *rotateAnimation = new QPropertyAnimation(this, "rotateValue");
     // 设置旋转持续时间;
-    rotateAnimation->setDuration(1000);
-    qDebug() << "设置选择持续世界";
+    rotateAnimation->setDuration(8000);
+    qDebug() << "设置选择持续时间";
     // 设置旋转角度变化趋势;
     rotateAnimation->setEasingCurve(QEasingCurve::InCubic);
     // 设置旋转角度范围;
@@ -71,11 +75,11 @@ void RotateWidget::onRotateWindow()
 // 旋转结束;
 void RotateWidget::onRotateFinished()
 {
-        qDebug() << "结束旋转";
+//    qDebug() << "结束旋转";
     m_isRoratingWindow = false;
     setCurrentWidget(widget(m_nextPageIndex));
     repaint();
-
+    this->setFixedSize(QSize(m_loginWindow->width(), m_loginWindow->height()+15 ));
 }
 
 // 绘制旋转效果;
@@ -92,6 +96,7 @@ void RotateWidget::paintEvent(QPaintEvent *event)
             QPainter painter(this);
             painter.setRenderHint(QPainter::Antialiasing);
             QTransform transform;
+            //X坐标都向中间平移
             transform.translate(width() / 2, 0);
             transform.rotate(rotateValue, Qt::YAxis);
             painter.setTransform(transform);
@@ -125,6 +130,6 @@ void RotateWidget::onHideWindow()
 
 void RotateWidget::closeRotate()
 {
-    qDebug() << "closeRotate" ;
+//    qDebug() << "closeRotate" ;
     qApp->quit();
 }

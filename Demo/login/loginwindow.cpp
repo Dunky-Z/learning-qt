@@ -89,7 +89,7 @@ void LoginWindow::initMyTitle()
     m_titleBar->setButtonType(MIN_BUTTON);
     m_titleBar->setTitleWidth(this->width());
     // 这里需要设置成false，不允许通过标题栏拖动来移动窗口位置,否则会造成窗口位置错误;
-    m_titleBar->setMoveParentWindowFlag(true);
+    m_titleBar->setMoveParentWindowFlag(false);
     ui->pButtonArrow->raise();
 }
 
