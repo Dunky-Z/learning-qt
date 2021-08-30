@@ -38,5 +38,13 @@ void PaintedWidget::paintEvent(QPaintEvent *)
     pen.setDashPattern(dashes);
     painter.setPen(pen);
     painter.drawLine(30, 300, 600, 30);
-    ///////////////////设置画笔样式
+    ///////////////////对比反走样效果
+    painter.setPen(QPen(Qt::black, 5, Qt::DashDotLine, Qt::RoundCap));
+    painter.setBrush(Qt::yellow);
+    painter.drawEllipse(550, 150, 200, 150);
+
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    painter.setPen(QPen(Qt::black, 5, Qt::DashDotLine, Qt::RoundCap));
+    painter.setBrush(Qt::yellow);
+    painter.drawEllipse(300, 150, 200, 150);
 }
