@@ -50,7 +50,6 @@ void LoginWindow::initWindow()
     QRegExp regExp("[A-Za-z0-9_]{6,30}");       //正则表达式限制用户名输入不能输入汉字
     lineEdit->setValidator(new QRegExpValidator(regExp,this));
     ui->passwordEdit->setPlaceholderText(QStringLiteral("密码"));
-
     //密码框中的小键盘按钮;
     m_keyboardButton = new QPushButton();
     m_keyboardButton->setObjectName("pButtonKeyboard");

@@ -1,6 +1,5 @@
 # Prerequisites
-**/build-*
-build-*/*
+/Demo/build*
 *.d
 
 # Compiled Object files
